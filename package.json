@@ -8,11 +8,6 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
-    "lint-staged": {
-      "*.{js,jsx,vue,ts,tsx}": [
-        "pnpm lint:fix"
-      ]
-    },
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -27,7 +22,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "nuxt": "^3.2.2",
     "prettier": "^2.8.4",
@@ -38,5 +33,9 @@
     "vant": "^4.0.11",
     "vue": "^3.0.0"
   },
-  "commitlint": { "extends": [ "@commitlint/config-conventional" ] }
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
 }
