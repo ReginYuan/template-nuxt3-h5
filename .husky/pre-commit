@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# pnpm  run prepare
-# npx --no-install lint-staged
-# npx lint-staged
-pnpm  test
+pnpm  run prepare
+# pnpm run  test
