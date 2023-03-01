@@ -11,6 +11,7 @@
         <van-tabbar-item replace to="/news" icon="chat-o">消息</van-tabbar-item>
         <van-tabbar-item replace to="/me" icon="user-o">我的</van-tabbar-item>
       </van-tabbar>
+      <!--  -->
     </div>
   </template>
   <script lang="ts" setup>

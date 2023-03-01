@@ -11,19 +11,28 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
     "prepare": "husky install"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@commitlint/cz-commitlint"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cz-commitlint": "^17.4.4",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vant/nuxt": "^1.0.0",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.3",
+    "inquirer": "^8.0.0",
     "lint-staged": "^13.1.2",
     "nuxt": "^3.2.2",
     "prettier": "^2.8.4",
@@ -31,12 +40,8 @@
   },
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.4.14",
+    "@types/node": "^18.14.2",
     "vant": "^4.0.11",
     "vue": "^3.0.0"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
