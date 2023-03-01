@@ -1,6 +1,6 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./tsconfig.node.json",
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "outDir": "./"
   },
