@@ -35,8 +35,7 @@
     "inquirer": "^8.2.5",
     "lint-staged": "^13.1.2",
     "nuxt": "^3.2.2",
-    "prettier": "^2.8.4",
-    "typescript": "^4.9.5"
+    "prettier": "^2.8.4"
   },
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.4.14",
