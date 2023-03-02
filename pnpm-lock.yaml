@@ -21,8 +21,11 @@ specifiers:
   eslint-plugin-vue: ^9.9.0
   husky: ^8.0.0
   inquirer: ^8.2.5
+  kysen-flexible: ^1.0.3
   lint-staged: ^13.1.2
+  lru-cache: ^7.18.1
   nuxt: ^3.2.2
+  ohmyfetch: ^0.4.21
   pinia: ^2.0.32
   postcss: ^8.4.21
   postcss-pxtorem: ^6.0.0
@@ -36,6 +39,9 @@ dependencies:
   '@pinia-plugin-persistedstate/nuxt': registry.npmmirror.com/@pinia-plugin-persistedstate/nuxt/1.0.0_zebqlokuyzf54u3x3a43v4cl4i
   '@pinia/nuxt': registry.npmmirror.com/@pinia/nuxt/0.4.7_hmuptsblhheur2tugfgucj7gc4
   '@types/node': registry.npmmirror.com/@types/node/18.14.2
+  kysen-flexible: registry.npmmirror.com/kysen-flexible/1.0.3
+  lru-cache: registry.npmmirror.com/lru-cache/7.18.1
+  ohmyfetch: registry.npmmirror.com/ohmyfetch/0.4.21
   pinia: registry.npmmirror.com/pinia/2.0.32_hmuptsblhheur2tugfgucj7gc4
   typescript: registry.npmmirror.com/typescript/4.9.5
   vant: registry.npmmirror.com/vant/4.0.11_vue@3.2.47
@@ -2687,6 +2693,15 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  registry.npmmirror.com/busboy/1.6.0:
+    resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/busboy/-/busboy-1.6.0.tgz}
+    name: busboy
+    version: 1.6.0
+    engines: {node: '>=10.16.0'}
+    dependencies:
+      streamsearch: registry.npmmirror.com/streamsearch/1.1.0
+    dev: false
+
   registry.npmmirror.com/c12/1.1.2:
     resolution: {integrity: sha512-fHT5HDEHNMb2oImnqJ88/UlpEOkY/chdyYxSd3YCpvBqBvU0IDlHTkNc7GnjObDMxdis2lL+rwlQcNq8VeZESA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/c12/-/c12-1.1.2.tgz}
     name: c12
@@ -5280,6 +5295,12 @@ packages:
     name: knitwork
     version: 1.0.0
 
+  registry.npmmirror.com/kysen-flexible/1.0.3:
+    resolution: {integrity: sha512-Y5kYXWPTYJO0iqs78XroJJATJv+JILBHNkOehBuBw1aF/0fMdvIjGKEEvRC9Vix2AUfzd39TBdIbJmakX5tqkQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/kysen-flexible/-/kysen-flexible-1.0.3.tgz}
+    name: kysen-flexible
+    version: 1.0.3
+    dev: false
+
   registry.npmmirror.com/lazystream/1.0.1:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lazystream/-/lazystream-1.0.1.tgz}
     name: lazystream
@@ -5591,12 +5612,11 @@ packages:
     dependencies:
       yallist: registry.npmmirror.com/yallist/4.0.0
 
-  registry.npmmirror.com/lru-cache/7.17.0:
-    resolution: {integrity: sha512-zSxlVVwOabhVyTi6E8gYv2cr6bXK+8ifYz5/uyJb9feXX6NACVDwY4p5Ut3WC3Ivo/QhpARHU3iujx2xGAYHbQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-7.17.0.tgz}
+  registry.npmmirror.com/lru-cache/7.18.1:
+    resolution: {integrity: sha512-8/HcIENyQnfUTCDizRu9rrDyG6XG/21M4X7/YEGZeD76ZJilFPAUVb/2zysFf7VVO1LEjCDFyHp8pMMvozIrvg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-7.18.1.tgz}
     name: lru-cache
-    version: 7.17.0
+    version: 7.18.1
     engines: {node: '>=12'}
-    dev: true
 
   registry.npmmirror.com/magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/magic-string/-/magic-string-0.25.9.tgz}
@@ -6010,6 +6030,12 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: true
 
+  registry.npmmirror.com/node-fetch-native/0.1.8:
+    resolution: {integrity: sha512-ZNaury9r0NxaT2oL65GvdGDy+5PlSaHTovT6JV5tOW07k1TQmgC0olZETa4C9KZg0+6zBr99ctTYa3Utqj9P/Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/node-fetch-native/-/node-fetch-native-0.1.8.tgz}
+    name: node-fetch-native
+    version: 0.1.8
+    dev: false
+
   registry.npmmirror.com/node-fetch-native/1.0.2:
     resolution: {integrity: sha512-KIkvH1jl6b3O7es/0ShyCgWLcfXxlBrLBbP3rOr23WArC66IMcU4DeZEeYEOwnopYhawLTn7/y+YtmASe8DFVQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/node-fetch-native/-/node-fetch-native-1.0.2.tgz}
     name: node-fetch-native
@@ -6262,6 +6288,17 @@ packages:
     name: ohash
     version: 1.0.0
     dev: true
+
+  registry.npmmirror.com/ohmyfetch/0.4.21:
+    resolution: {integrity: sha512-VG7f/JRvqvBOYvL0tHyEIEG7XHWm7OqIfAs6/HqwWwDfjiJ1g0huIpe5sFEmyb+7hpFa1EGNH2aERWR72tlClw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ohmyfetch/-/ohmyfetch-0.4.21.tgz}
+    name: ohmyfetch
+    version: 0.4.21
+    dependencies:
+      destr: registry.npmmirror.com/destr/1.2.2
+      node-fetch-native: registry.npmmirror.com/node-fetch-native/0.1.8
+      ufo: registry.npmmirror.com/ufo/0.8.6
+      undici: registry.npmmirror.com/undici/5.20.0
+    dev: false
 
   registry.npmmirror.com/on-finished/2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/on-finished/-/on-finished-2.4.1.tgz}
@@ -7720,6 +7757,13 @@ packages:
     name: std-env
     version: 3.3.2
 
+  registry.npmmirror.com/streamsearch/1.1.0:
+    resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/streamsearch/-/streamsearch-1.1.0.tgz}
+    name: streamsearch
+    version: 1.1.0
+    engines: {node: '>=10.0.0'}
+    dev: false
+
   registry.npmmirror.com/string-argv/0.3.1:
     resolution: {integrity: sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/string-argv/-/string-argv-0.3.1.tgz}
     name: string-argv
@@ -8176,6 +8220,12 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
+  registry.npmmirror.com/ufo/0.8.6:
+    resolution: {integrity: sha512-fk6CmUgwKCfX79EzcDQQpSCMxrHstvbLswFChHS0Vump+kFkw7nJBfTZoC1j0bOGoY9I7R3n2DGek5ajbcYnOw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ufo/-/ufo-0.8.6.tgz}
+    name: ufo
+    version: 0.8.6
+    dev: false
+
   registry.npmmirror.com/ufo/1.1.1:
     resolution: {integrity: sha512-MvlCc4GHrmZdAllBc0iUDowff36Q9Ndw/UzqmEKyrfSzokTd9ZCy1i+IIk5hrYKkjoYVQyNbrw7/F8XJ2rEwTg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ufo/-/ufo-1.1.1.tgz}
     name: ufo
@@ -8196,6 +8246,15 @@ packages:
       estree-walker: registry.npmmirror.com/estree-walker/3.0.3
       magic-string: registry.npmmirror.com/magic-string/0.27.0
       unplugin: registry.npmmirror.com/unplugin/1.1.0
+
+  registry.npmmirror.com/undici/5.20.0:
+    resolution: {integrity: sha512-J3j60dYzuo6Eevbawwp1sdg16k5Tf768bxYK4TUJRH7cBM4kFCbf3mOnM/0E3vQYXvpxITbbWmBafaDbxLDz3g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/undici/-/undici-5.20.0.tgz}
+    name: undici
+    version: 5.20.0
+    engines: {node: '>=12.18'}
+    dependencies:
+      busboy: registry.npmmirror.com/busboy/1.6.0
+    dev: false
 
   registry.npmmirror.com/unenv/1.2.1:
     resolution: {integrity: sha512-XzrBVHrA7xGfME90qQpcTPBxbKzDwXFppOpUKFSsB3tz0U1JKzI02h0chV88NbdlH1X/XAEwozAcUkm5i9++aA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unenv/-/unenv-1.2.1.tgz}
@@ -8287,7 +8346,7 @@ packages:
       h3: registry.npmmirror.com/h3/1.5.0
       ioredis: registry.npmmirror.com/ioredis/5.3.1
       listhen: registry.npmmirror.com/listhen/1.0.3
-      lru-cache: registry.npmmirror.com/lru-cache/7.17.0
+      lru-cache: registry.npmmirror.com/lru-cache/7.18.1
       mkdir: registry.npmmirror.com/mkdir/0.0.2
       mri: registry.npmmirror.com/mri/1.2.0
       node-fetch-native: registry.npmmirror.com/node-fetch-native/1.0.2

@@ -1,5 +1,9 @@
 import { defineNuxtPlugin } from '#app'
-// 设置rem 1rem = 100px
+
+/**
+ *自定义插件 全局转换rem
+ * 设置rem 1rem = 100px
+ * */
 export default defineNuxtPlugin(() => {
   if (process.client) {
     // 屏幕适应

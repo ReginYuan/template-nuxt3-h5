@@ -22,4 +22,5 @@ const changeName = () => {
 const reset = () => {
    user.$reset()
 }
+
 </script>

@@ -10,6 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended'
   ],
   overrides: [],
+  parser: '@babel/eslint-parser',
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
