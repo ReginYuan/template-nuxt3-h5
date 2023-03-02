@@ -35,6 +35,8 @@
     "inquirer": "^8.2.5",
     "lint-staged": "^13.1.2",
     "nuxt": "^3.2.2",
+    "postcss": "^8.4.21",
+    "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.4"
   },
   "dependencies": {

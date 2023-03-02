@@ -24,6 +24,8 @@ specifiers:
   lint-staged: ^13.1.2
   nuxt: ^3.2.2
   pinia: ^2.0.32
+  postcss: ^8.4.21
+  postcss-pxtorem: ^6.0.0
   prettier: ^2.8.4
   typescript: ^4.9.5
   vant: ^4.0.11
@@ -58,6 +60,8 @@ devDependencies:
   inquirer: registry.npmmirror.com/inquirer/8.2.5
   lint-staged: registry.npmmirror.com/lint-staged/13.1.2
   nuxt: registry.npmmirror.com/nuxt/3.2.2_zro3vrnnfyw5fi3rgmsvqzdpce
+  postcss: registry.npmmirror.com/postcss/8.4.21
+  postcss-pxtorem: registry.npmmirror.com/postcss-pxtorem/6.0.0_postcss@8.4.21
   prettier: registry.npmmirror.com/prettier/2.8.4
 
 packages:
@@ -6936,6 +6940,17 @@ packages:
       cssnano-utils: registry.npmmirror.com/cssnano-utils/3.1.0_postcss@8.4.21
       postcss: registry.npmmirror.com/postcss/8.4.21
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
+    dev: true
+
+  registry.npmmirror.com/postcss-pxtorem/6.0.0_postcss@8.4.21:
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss-pxtorem/-/postcss-pxtorem-6.0.0.tgz}
+    id: registry.npmmirror.com/postcss-pxtorem/6.0.0
+    name: postcss-pxtorem
+    version: 6.0.0
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: registry.npmmirror.com/postcss/8.4.21
     dev: true
 
   registry.npmmirror.com/postcss-reduce-initial/5.1.2_postcss@8.4.21:
