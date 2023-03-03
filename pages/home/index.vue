@@ -14,8 +14,15 @@ onMounted(() => {
 </script>
 
 <template>
-   <h1>我最帅</h1>
-   <h5>接口返回数据：{{ listData }}</h5>
+   <div class="home">
+      <h1>我最帅</h1>
+      <h5>接口返回数据：{{ listData }}</h5>
+   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.home {
+   display: flex;
+   flex-direction: column;
+}
+</style>

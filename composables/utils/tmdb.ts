@@ -4,7 +4,6 @@ import { hash as ohash } from 'ohash'
 import type { Media, MediaType, PageResult } from '@/types/useType'
 
 const apiBaseUrl = import.meta.env.VITE_APP_BASE_API
-
 const cache = new LRU({
   max: 500,
   ttl: 2000 * 60 * 60 // 2 hour
@@ -14,6 +13,7 @@ function _fetchTMDB(
   url: string,
   params: Record<string, string | number | undefined> = {}
 ) {
+  // console.log('apiBaseUrl', `${apiBaseUrl}/tmdb/` + url)
   return $fetch(url, {
     baseURL: `${apiBaseUrl}/tmdb`,
     params

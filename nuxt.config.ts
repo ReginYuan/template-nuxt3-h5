@@ -1,7 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const envConfig = useRuntimeConfig().public
-
+console.log('当前环境：', process.env.VITE_APP_BASE_URL)
 export default defineNuxtConfig({
+  // 把env放入这个里面，通过useRuntimeConfig获取
+  vite: {
+    envDir: '~/env' // 指定env文件夹
+  },
   css: ['@/assets/base.ignore.css'],
   postcss: {
     plugins: {
@@ -16,10 +19,16 @@ export default defineNuxtConfig({
   },
   // 代理转发
   nitro: {
+    port: process.env.VITE_APP_PORT,
+    host: true,
+    open: true,
     devProxy: {
-      '/api': {
-        target: envConfig.env.VITE_APP_BASE_API,
-        changeOrigin: true
+      '/dev-api': {
+        target: process.env.VITE_APP_BASE_URL,
+        changeOrigin: true,
+        rewrite: p => {
+          return p.replace(/^\/dev-api/, '')
+        }
       }
     }
   },

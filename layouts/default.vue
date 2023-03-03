@@ -1,7 +1,7 @@
 <template>
   <div class="body bg-gray-100 flex flex-col min-h-screen">
     <HeaderBar></HeaderBar>
-    <main class="container">
+    <main class="main">
       <slot />
     </main>
     <TabBar></TabBar>
@@ -12,6 +12,4 @@
 </script>
 
 <style scoped>
-.body {
-}
 </style>
