@@ -19,16 +19,13 @@ export default defineNuxtConfig({
   },
   // 代理转发
   nitro: {
-    port: process.env.VITE_APP_PORT,
-    host: true,
-    open: true,
     devProxy: {
+      port: process.env.VITE_APP_PORT,
+      host: true,
+      open: true,
       '/dev-api': {
         target: process.env.VITE_APP_BASE_URL,
-        changeOrigin: true,
-        rewrite: (p: string) => {
-          return p.replace(/^\/dev-api/, '')
-        }
+        changeOrigin: true
       }
     }
   },
