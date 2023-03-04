@@ -4,11 +4,12 @@ import { listMedia } from "~~/composables/utils/tmdb";
 // 获取组件的实例
 const listData = ref()
 const lsitAll = async () => {
-   const list = await listMedia('movie', 'popular', 1)
+   const list = await listMedia('posts', 1)
    listData.value = list
    console.log('list', list)
 }
 onMounted(() => {
+   console.log('list')
    lsitAll()
 })
 </script>

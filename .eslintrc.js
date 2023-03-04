@@ -7,7 +7,8 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:vue/vue3-recommended',
     'plugin:nuxt/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    "@antfu"
   ],
   overrides: [],
   parser: '@babel/eslint-parser',

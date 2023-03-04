@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-console.log('当前环境：', process.env.VITE_APP_BASE_URL)
+
 export default defineNuxtConfig({
   // 把env放入这个里面，通过useRuntimeConfig获取
   vite: {
@@ -26,11 +26,11 @@ export default defineNuxtConfig({
       '/dev-api': {
         target: process.env.VITE_APP_BASE_URL,
         changeOrigin: true,
-        rewrite: p => {
+        rewrite: (p: string) => {
           return p.replace(/^\/dev-api/, '')
         }
       }
     }
   },
-  modules: ['@vant/nuxt', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt']
-})
+    modules: ['@vant/nuxt', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt']
+  })
