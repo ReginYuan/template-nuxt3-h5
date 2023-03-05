@@ -1,15 +1,15 @@
-<template>
-  <div>
-    <div>
-      <h1>test</h1>
-      <nuxt-link to="/test-2">test-2</nuxt-link>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
+// 获取组件的实例
 </script>
 
-<style scoped>
+<template>
+   <div class="index">
+   </div>
+</template>
 
+<style scoped>
+.index {
+   display: flex;
+   flex-direction: column;
+}
 </style>
