@@ -14,7 +14,6 @@ const imageList = ref([
    'https://img1.baidu.com/it/u=1670045137,1956860080&fm=253&fmt=auto&app=120&f=JPEG?w=1024&h=576',
 ]) 
 onMounted(() => {
-   console.log('list')
    lsitAll()
 })
 </script>
