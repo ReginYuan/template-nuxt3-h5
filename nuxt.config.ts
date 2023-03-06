@@ -3,7 +3,11 @@
 export default defineNuxtConfig({
   // 把env放入这个里面，通过useRuntimeConfig获取
   vite: {
-    envDir: '~/env' // 指定env文件夹
+    envDir: '~/env', // 指定env文件夹
+    optimizeDeps: {
+      // 用于：从预捆绑中排除的依赖项
+      exclude: []
+    }
   },
   css: ['@/assets/base.ignore.css'],
   postcss: {
@@ -29,5 +33,10 @@ export default defineNuxtConfig({
       }
     }
   },
-    modules: ['@vant/nuxt', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt']
-  })
+  modules: [
+    '@vant/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    '@unocss/nuxt'
+  ]
+})
