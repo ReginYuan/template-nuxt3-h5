@@ -6,7 +6,7 @@
     </main>
     <TabBar></TabBar>
     <!-- 开启底部安全区适配 -->
-    <!-- <van-number-keyboard safe-area-inset-bottom /> -->
+    <van-number-keyboard safe-area-inset-bottom />
   </div>
 </template>
 
