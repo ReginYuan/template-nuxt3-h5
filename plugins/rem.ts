@@ -26,9 +26,9 @@ export default defineNuxtPlugin(() => {
         document.querySelector('html')!.style.fontSize = `${fZ}px`
       }
       setFont()
-      setTimeout(() => {
-        setFont()
-      }, 300)
+      // setTimeout(() => {
+        // setFont()
+      // }, 300)
       doc.addEventListener('DOMContentLoaded', setFont, false)
       win.addEventListener('resize', setFont, false)
       win.addEventListener('load', setFont, false)
