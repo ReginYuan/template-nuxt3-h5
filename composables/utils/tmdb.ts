@@ -1,11 +1,9 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import { showSuccessToast, showFailToast } from 'vant'
+import { showFailToast } from 'vant'
 import errorCode from '~/composables/utils/errorCode'
 import { getToken } from '~/composables/utils/auth'
-import { tansParams } from '~/composables/utils/validate'
-import cachea from '~/composables/utils/cache'
 const apiBaseUrl = import.meta.env.VITE_APP_BASE_API
 
 const cache = new LRU({
@@ -43,31 +41,50 @@ function _fetchTMDB(
     params,
     // 请求拦截器
     onRequest({ request, options }) {
-      console.log('options', options)
       // 是否需要设置 token
-      const isToken = (options.headers || {})?.isToken === false
-      debugger
+      const isToken = options.headers?.isToken === false
       if (getToken() && !isToken) {
-        // options?.headers?.Authorization = 'Bearer ' + getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
-        config.headers.Authorization = 'Bearer ' + getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+        // 让每个请求携带自定义token 请根据实际情况自行修改
+        config.headers.Authorization = 'Bearer ' + getToken()
       }
     },
 
     // 响应拦截
     onResponse({ response }) {
-      // // const userStore = useUserStore()
-
-      console.log('response', response)
-      let res = response
       // 未设置状态码则默认成功状态
-      const code = res._data.code || 200
+      let data = response._data
+      const code = data.code || 200
       // 获取错误信息
-      const msg = errorCode[code] || res._data.msg || errorCode['default']
-      // 二进制数据则直接返回
-      // if (res.type === 'blob' || res.type === 'arraybuffer') {
-      //   return res._data
-      // }
+      const msg = (errorCode as any)[code] || data.msg || errorCode['default']
       if (code === 401) {
+        showFailToast({
+          message: msg
+        })
+
+        // 判断是ios环境还是安卓的环境
+        let us = navigator.userAgent
+        let isAndroid = us.indexOf('Android') > -1 || us.indexOf('Linux') > -1
+        let isIOS = !!us.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+
+        if (window) {
+          // reload 是刷新的方法
+          // 如果是在安卓环境下就调用对应返回安卓登录界面的方法
+          if ((window as any).androidInterface && isAndroid) {
+            ;(window as any).androidInterface.reload()
+            return
+          }
+
+          // 如果是在安卓环境下就调用对应返回安卓登录界面的方法
+          if (
+            (window as any).webkit &&
+            (window as any).webkit.messageHandlers.reload &&
+            isIOS
+          ) {
+            ;(window as any).webkit.messageHandlers.reload.postMessage('')
+            return
+          }
+          // location.reload()
+        }
         return Promise.reject('无效的会话，或者会话已过期，请重新登录。')
       } else if (code === 500) {
         showFailToast({
@@ -85,29 +102,8 @@ function _fetchTMDB(
         })
         return Promise.reject('error')
       } else {
-        return Promise.resolve(res._data)
+        return Promise.resolve(data)
       }
-    },
-    // 错误处理
-    onResponseError({ request, options, response }) {
-      // debugger
-      // console.log('err' + request)
-      // console.log('err' + options)
-      // console.log('err' + response)
-      // let { message } = error
-      // if (message == 'Network Error') {
-      //   message = '后端接口连接异常'
-      // } else if (message.includes('timeout')) {
-      //   message = '系统接口请求超时'
-      // } else if (message.includes('Request failed with status code')) {
-      //   message = '系统接口' + message.substr(message.length - 3) + '异常'
-      // }
-      // showFailToast({
-      //   duration: 0,
-      //   forbidClick: true,
-      //   message: message
-      // })
-      // return Promise.reject(error)
     }
   })
 }
@@ -127,5 +123,5 @@ export function fetchTMDB(
       })
     )
   }
-  return cache.get(hash)!
+  return (cache as any).get(hash)!
 }
