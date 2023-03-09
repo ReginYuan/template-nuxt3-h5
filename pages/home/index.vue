@@ -1,15 +1,31 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, getCurrentInstance } from 'vue'
 import { getList } from '~/server/api/user'
+// import VuePdf from "vue-pdf"
 // 获取组件的实例
 const listData = ref()
 const lsitAll = async () => {
    const res = await getList({})
    listData.value = res.data
 }
+const proxy = getCurrentInstance()
+console.log('proxy', proxy)
+let url = '~/public/tushu.pdf'
+const numPages = ref(1)
+// const getNumPages = () => {
+//    let loadingTask = VuePdf.createLoadingTask(
+//       url
+//    );
+//    loadingTask.promise.then((pdf: { numPages: number; }) => { numPages.value = pdf.numPages; }).catch((err: any) => { console.error('pdf 加载失败', err); })
+// }
 onMounted(() => {
    lsitAll()
+   // getNumPages()
 })
+
+
+
+
 </script>
 
 <template>
@@ -22,6 +38,7 @@ onMounted(() => {
             <img class="lazy" v-lazy="item.imgURL" />
          </div>
       </div>
+      <VuePdf src="~/public/tushu.pdf" :page="1" />
    </div>
 </template>
 
