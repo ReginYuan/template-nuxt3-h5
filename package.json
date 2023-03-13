@@ -52,20 +52,22 @@
     "@jridgewell/sourcemap-codec": "^1.4.14",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@pinia/nuxt": "^0.4.7",
+    "@pzy915/pdf-preview": "^0.0.3",
     "@types/node": "^18.14.2",
     "install": "^0.13.0",
     "js-cookie": "^3.0.1",
     "kysen-flexible": "^1.0.3",
     "lru-cache": "^7.18.1",
     "ohmyfetch": "^0.4.21",
-    "pdfjs-dist": "2.7",
+    "pdfjs-dist": "2.12.313",
     "pinia": "^2.0.32",
+    "sass": "^1.59.2",
     "typescript": "^4.9.5",
     "vant": "^4.0.11",
     "vite": "4.0.0",
     "vue": "^3.0.0",
     "vue-pdf": "^4.3.0",
     "webpack": "4.46.0",
-    "worker-loader": "^3.0.7"
+    "worker-loader": "^2.0.0"
   }
 }

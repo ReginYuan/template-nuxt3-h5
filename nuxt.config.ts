@@ -9,8 +9,8 @@ export default defineNuxtConfig({
       exclude: []
     }
   },
-  plugins:[
-    { src: '~/plugins/vue-pdf.ts', ssr: false }
+  plugins: [
+    // { src: '~/plugins/vue-pdf.ts', ssr: false }
   ],
   css: ['@/assets/base.ignore.css'],
   postcss: {
