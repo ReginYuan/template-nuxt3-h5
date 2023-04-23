@@ -1,5 +1,5 @@
 # template-nuxt-h5
-数智工福系统
+nuxt3移动端开发模版
 
 # 安装依赖
 pnpm  install
