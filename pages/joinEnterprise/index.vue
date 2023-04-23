@@ -88,7 +88,7 @@ import {
   hideNav,
   closewebView,
   isAppCharacteristic
-} from '~/composables/utils/validate'
+} from '~/utils/validate'
 definePageMeta({ layout: false })
 const router = useRouter()
 

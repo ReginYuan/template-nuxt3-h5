@@ -1,4 +1,4 @@
-import { fetchTMDB } from '~/composables/utils/tmdb'
+import { fetchTMDB } from '~/utils/tmdb'
 // h5-加入企业校验
 export function h5joinCompanyCheck(params: any) {
   /**

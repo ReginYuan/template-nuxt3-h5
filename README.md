@@ -1,11 +1,14 @@
 # template-nuxt-h5
-nuxt h5 模板
+数智工福系统
 
 # 安装依赖
 pnpm  install
 
 # 运行项目
 pnpm  run  dev
+
+# 项目打包运行项目
+pnpm  run  build
 
 # 项目安装了对应的代码提交规范工具
 

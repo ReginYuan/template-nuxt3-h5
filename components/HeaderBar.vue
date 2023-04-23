@@ -15,10 +15,9 @@
     </van-nav-bar>
   </div>
 </template>
-
-<script setup lang="ts">
+<script  lang="ts" setup>
 import { useRouter } from 'vue-router'
-import { closewebView } from '~/composables/utils/validate'
+import { closewebView } from '../utils/validate'
 const props = defineProps<{ title: string; parentId: string }>()
 const router = useRouter()
 const goSearch = () => {
@@ -30,7 +29,7 @@ const onClickLeft = () => {
 }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss" scoped>
 .header {
   width: 100%;
   position: fixed;

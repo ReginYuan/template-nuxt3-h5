@@ -7,15 +7,21 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['@babel/runtime/regenerator'],
       // 用于：从预捆绑中排除的依赖项
-      exclude: []
+      exclude: ['vant/Lazyload']
     },
     build: {
       commonjsOptions: {
         include: [/node_modules/],
         transformMixedEsModules: true
+      },
+      rollupOptions: {
+        external: ['vant']
       }
     },
-    plugins: [viteCommonjs(), esbuildCommonjs()]
+    plugins: [
+      viteCommonjs(),
+      esbuildCommonjs(),
+    ]
   },
   build: {
     transpile: ['@pzy915/pdf-preview', 'pdfjs-dist']
@@ -29,9 +35,15 @@ export default defineNuxtConfig({
         propList: ['*'],
         mediaQuery: false,
         exclude: 'ignore'
-      }
+      },
     }
   },
+  plugins: [
+    {
+      src: '~/plugins/vant-lazyload.ts',
+      ssr: false
+    },
+  ],
   // 代理转发
   nitro: {
     preset: 'node-server',
@@ -50,5 +62,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@unocss/nuxt'
-  ]
+  ],
+  experimental: {
+    externalVue: true,
+  },
 })

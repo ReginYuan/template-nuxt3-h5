@@ -1,4 +1,4 @@
-import { fetchTMDB } from '~/composables/utils/tmdb'
+import { fetchTMDB } from '~/utils/tmdb'
 // 接口示例
 export function getInfo(params: any) {
   /**
