@@ -1,11 +1,6 @@
 <template>
   <div class="navbar">
-    <div class="container">
-      头部
-    </div>
-  </div>
-  <div class="w-[100%] h-[80px]">
-
+    头部
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="pageFooter h-[120px]">底部</div>
+  <div class="pageFooter">底部</div>
 </template>
  
 <script setup lang="ts">
@@ -8,6 +8,6 @@
 <style scoped>
 .pageFooter {
   z-index: 1000;
-  @apply bg-white fixed bottom-0 left-0 right-0 shadow-sm;
+  @apply bg-white fixed bottom-0 left-0 right-0  shadow-sm h-[120px];
 }
 </style>
