@@ -8,6 +8,5 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
   },
-  
   "exclude": ["node_modules", "dist", "./components.d.ts"]
 }

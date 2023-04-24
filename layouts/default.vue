@@ -1,20 +1,19 @@
 <template>
-  <div class="body flex flex-col">
-    <main class="main">
-      <!-- <slot /> -->
-      <NuxtPage keepalive></NuxtPage>
+  <div class="body">
+    <NavBar />
+    <main class="container">
+      <slot />
     </main>
-    <!-- 开启底部安全区适配 -->
-    <van-number-keyboard safe-area-inset-bottom />
+    <PageFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  KeepAlive: {
-    exclude: ['industry', 'bossBank', 'IndustryReport', 'policyRule', 'search']
-  }
-})
 </script>
 
-<style scoped></style>
+<style scoped>
+.body {
+  /* min-width: 1000px; */
+  @apply flex flex-col bg-gray-100 min-h-screen;
+}
+</style>

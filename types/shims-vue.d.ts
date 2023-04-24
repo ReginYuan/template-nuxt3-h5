@@ -11,5 +11,6 @@ declare module 'vue' {
     commonjs: any
     workerSrc: any
     VanLazyload: any
+    ssrContext: any
   }
 }

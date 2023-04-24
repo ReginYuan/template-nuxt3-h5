@@ -1,4 +1,5 @@
 @import './reset.css';
+@import './main.css';
 
 @media (min-width: 320px) {
   html {

@@ -1,11 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { viteCommonjs, esbuildCommonjs } from '@originjs/vite-plugin-commonjs'
 export default defineNuxtConfig({
+  css: ["@/assets/main.css"],
+  // css: ['@/assets/base.ignore.css'],
   // 把env放入这个里面，通过useRuntimeConfig获取
   vite: {
     envDir: '~/env', // 指定env文件夹
     optimizeDeps: {
-      include: ['@babel/runtime/regenerator'],
+      include:
+        process.env.NODE_ENV === 'development'
+          ? [
+              'naive-ui',
+              'vueuc',
+              'date-fns-tz/esm/formatInTimeZone',
+              '@babel/runtime/regenerator'
+            ]
+          : ['@babel/runtime/regenerator'],
       // 用于：从预捆绑中排除的依赖项
       exclude: []
     },
@@ -21,12 +31,21 @@ export default defineNuxtConfig({
     plugins: [viteCommonjs(), esbuildCommonjs()],
     ssr: {
       noExternal: []
-    },
+    }
   },
   build: {
-    transpile: ['@pzy915/pdf-preview', 'pdfjs-dist']
+    transpile:
+      process.env.NODE_ENV === 'production'
+        ? [
+            'naive-ui',
+            'vueuc',
+            '@css-render/vue3-ssr',
+            '@juggle/resize-observer',
+            '@pzy915/pdf-preview',
+            'pdfjs-dist'
+          ]
+        : ['@juggle/resize-observer', '@pzy915/pdf-preview', 'pdfjs-dist']
   },
-  css: ['@/assets/base.ignore.css'],
   postcss: {
     plugins: {
       // tailwindcss: {},
@@ -38,12 +57,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  plugins: [
-    {
-      src: '~/plugins/vant-lazyload.ts',
-      ssr: false
-    }
-  ],
+  plugins: [],
   // 代理转发
   nitro: {
     preset: 'node-server',
@@ -58,10 +72,10 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    // '@vant/nuxt',
+    '@unocss/nuxt',
+    '@nuxt/content',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    '@unocss/nuxt'
   ],
   experimental: {
     externalVue: true
