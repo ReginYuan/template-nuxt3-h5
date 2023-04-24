@@ -1,12 +1,20 @@
-// import vue from '@vitejs/plugin-vue';
-import Components from 'unplugin-vue-components/vite';
-import { VantResolver } from 'unplugin-vue-components/resolvers';
+import { defineConfig } from 'vite'
+// import Components from 'unplugin-vue-components/vite';
+// import { VantResolver } from 'unplugin-vue-components/resolvers';
 
-export default {
+export default defineConfig({
+  optimizeDeps: {
+    include: []
+  },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/]
+    }
+  },
   plugins: [
     // vue(),
-    Components({
-      resolvers: [VantResolver()],
-    }),
-  ],
-};
+    // Components({
+    //   resolvers: [],
+    // }),
+  ]
+})

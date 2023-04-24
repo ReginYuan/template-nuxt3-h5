@@ -4,7 +4,7 @@
 
 <template>
    <div class="index">
-     
+     哈哈哈
    </div>
 </template>
 

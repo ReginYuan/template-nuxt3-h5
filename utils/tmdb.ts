@@ -1,7 +1,7 @@
 import { $fetch } from 'ohmyfetch'
 import LRU from 'lru-cache'
 import { hash as ohash } from 'ohash'
-import { showFailToast , showToast } from 'vant'
+// import { showFailToast , showToast } from 'vant'
 import errorCode from '~/utils/errorCode'
 import { getToken } from '~/utils/auth'
 const apiBaseUrl = '/api'
@@ -61,9 +61,9 @@ function _fetchTMDB(
         // 获取错误信息
         const msg = (errorCode as any)[code] || data.msg || errorCode['default']
         if (code === 401) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
 
           // 判断是ios环境还是安卓的环境
           let us = navigator.userAgent
@@ -77,9 +77,9 @@ function _fetchTMDB(
               // 如果是在安卓环境下就调用对应返回安卓登录界面的方法
               if ((window as any).androidInterface && isAndroid) {
                 const token = (window as any).androidInterface.getToken()
-                showFailToast({
-                  message: token
-                })
+                // showFailToast({
+                //   message: token
+                // })
                 return
               }
 
@@ -97,19 +97,19 @@ function _fetchTMDB(
           }
           return Promise.reject('无效的会话，或者会话已过期，请重新登录。')
         } else if (code === 500) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
           return Promise.reject(new Error(msg))
         } else if (code === 601) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
           return Promise.reject(new Error(msg))
         } else if (code !== 200) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
           return Promise.reject('error')
         } else {
           return Promise.resolve(data)
@@ -143,9 +143,9 @@ function _fetchTMDB(
         // 获取错误信息
         const msg = (errorCode as any)[code] || data.msg || errorCode['default']
         if (code === 401) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
 
           // 判断是ios环境还是安卓的环境
           let us = navigator.userAgent
@@ -159,9 +159,9 @@ function _fetchTMDB(
             // 如果是在安卓环境下就调用对应返回安卓登录界面的方法
             if ((window as any).androidInterface && isAndroid) {
               const token = (window as any).androidInterface.getToken()
-              showFailToast({
-                message: token
-              })
+              // showFailToast({
+              //   message: token
+              // })
               return
             }
 
@@ -178,19 +178,19 @@ function _fetchTMDB(
           }
           return Promise.reject('无效的会话，或者会话已过期，请重新登录。')
         } else if (code === 500) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
           return Promise.reject(new Error(msg))
         } else if (code === 601) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
           return Promise.reject(new Error(msg))
         } else if (code !== 200) {
-          showFailToast({
-            message: msg
-          })
+          // showFailToast({
+          //   message: msg
+          // })
           return Promise.reject('error')
         } else {
           return Promise.resolve(data)
